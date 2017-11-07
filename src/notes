@@ -1,0 +1,21 @@
+import PrivateRoute from './RouterExample.js';
+
+
+import React,{Component,} from 'react';
+import {Route,Redirect} from 'react-router-dom';
+
+export default class PrivateRoute extends React.Component{
+    constructor(){
+        super()
+    }
+    render(){
+        const {component, authed, ...rest}=this.props;
+        return(
+            <Route
+            {...rest}
+            render={(props) => authed === true
+              ? <Component {...this.props} />
+              : <Redirect to={{pathname: '/login', state: {from: props.location}}} />} />
+        )
+    }
+}

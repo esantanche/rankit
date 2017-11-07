@@ -10,6 +10,9 @@ const style = { maxWidth: 320 };
 //const nature = randomImage({ width: 600, height: 337, section: 'nature' });
 const nature = '';
 
+/**
+ * This is the main component representing the app.
+ */
 class App extends Component {
   constructor() {
     super();
@@ -20,6 +23,9 @@ class App extends Component {
     this.componentDidMount = this.componentDidMount.bind(this);
   }
    
+  /**
+   * Description of method "componentDidMount".
+   */
   componentDidMount() {
 
     var self = this;
@@ -48,6 +54,9 @@ class App extends Component {
     })
   }
 
+  /**
+   * Description of method "render".
+   */
   render() {
     return (      
       
@@ -110,6 +119,7 @@ class App extends Component {
             </p>
           </CardText>
         </Card>
+        <PrivateRoute />
       </div>
     );
   }

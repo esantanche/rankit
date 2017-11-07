@@ -1,0 +1,18 @@
+{
+  "coverage": "0%",
+  "expectCount": 5,
+  "actualCount": 0,
+  "files": {
+    "src/registerServiceWorker.js": {
+      "expectCount": 5,
+      "actualCount": 0,
+      "undocumentLines": [
+        11,
+        21,
+        46,
+        75,
+        102
+      ]
+    }
+  }
+}
