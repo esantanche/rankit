@@ -2,17 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './Home.js'
-import AnotherPage from './AnotherPage.js'
 import MaterialDesignComponentsExperiments from './MaterialDesignComponentsExperiments.js'
 import ChessboardTutorialApp from './ChessboardTutorial/ChessboardTutorialApp.js'
+import AnimationPlayground from './AnimationPlayground/AnimationPlayground.js'
 
-
-//import { randomImage } from 'utils/random';
-//import { QUOTATION_MARK } from 'constants/unicode';
-
-const style = { maxWidth: 320 };
-//const nature = randomImage({ width: 600, height: 337, section: 'nature' });
-const nature = '';
+//const style = { maxWidth: 320 };
+//const nature = '';
 
 /**
  * This is the main component representing the app.
@@ -30,17 +25,14 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Route exact path="/" component={Home} />
-          <Route path="/anotherpage" component={AnotherPage} />
           <Route path="/mdexperiments" component={MaterialDesignComponentsExperiments} />
           <Route path="/chesstutorial" component={ChessboardTutorialApp} />
-
+          <Route path="/animationplayground" component={AnimationPlayground} />
         </div>
       </BrowserRouter>
             
     );
   }
 }
-
-//<Button raised primary iconEl={<FontIcon>home</FontIcon>}>Button</Button>
 
 export default App;

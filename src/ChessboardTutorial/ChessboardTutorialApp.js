@@ -40,6 +40,8 @@ export default class ChessboardTutorialApp extends Component {
 			<div>
    				<Button raised primary iconEl={<FontIcon>home</FontIcon>} href="/">Back home</Button>
 
+				This tutorial works on Chrome. It may not work on Firefox.
+
 				<p>
 					<b>
 						<a href="https://github.com/react-dnd/react-dnd/tree/master/examples/00%20Chessboard/Tutorial%20App">
