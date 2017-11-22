@@ -82,7 +82,10 @@ class Home extends Component {
                                 <ListItem primaryText="React" />
                                 <ListItem primaryText="React Material Design" />
                                 <ListItem primaryText="React Motion" />
-                                <ListItem primaryText="..." />
+                                <ListItem primaryText="React Router" />
+                                <ListItem primaryText="React Drag and Drop" />
+                                <ListItem primaryText="(to come) Drupal 8" />
+                                <ListItem primaryText="(to come) Jest" />                                
                             </List>
 
                         </Card>
@@ -96,8 +99,13 @@ class Home extends Component {
                     <Grid>
                         <Cell size={3}>
                             <Card>
-                                <CardTitle title="To be replaced..." />
-                                <CardText>...with something else</CardText>
+                                <CardTitle title="Drag and drop experiment" />
+                                <CardText>Four cells and a card to drag and drop</CardText>
+                                <CardActions centered={true}>
+                                    <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/draganddropfourcellsexperimentapp">
+                                        Click here to see the experiment
+                                    </Button>
+                                </CardActions>	
                             </Card>
                         </Cell>
                         <Cell size={3}>

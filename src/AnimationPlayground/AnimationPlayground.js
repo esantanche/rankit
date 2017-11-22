@@ -166,8 +166,7 @@ export default class AnimationPlayground extends Component {
 					)}
 					</Motion>
 
-				</Cell>
-					)}
+				</Cell>					
 				
     		</Grid>
     		

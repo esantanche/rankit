@@ -5,6 +5,7 @@ import Home from './Home.js'
 import MaterialDesignComponentsExperiments from './MaterialDesignComponentsExperiments.js'
 import ChessboardTutorialApp from './ChessboardTutorial/ChessboardTutorialApp.js'
 import AnimationPlayground from './AnimationPlayground/AnimationPlayground.js'
+import DragAndDropFourCellsExperimentApp from './DragAndDropFourCellsExperiment/DragAndDropFourCellsExperimentApp.js'
 
 //const style = { maxWidth: 320 };
 //const nature = '';
@@ -28,6 +29,7 @@ class App extends Component {
           <Route path="/mdexperiments" component={MaterialDesignComponentsExperiments} />
           <Route path="/chesstutorial" component={ChessboardTutorialApp} />
           <Route path="/animationplayground" component={AnimationPlayground} />
+          <Route path="/draganddropfourcellsexperimentapp" component={DragAndDropFourCellsExperimentApp} />
         </div>
       </BrowserRouter>
             
