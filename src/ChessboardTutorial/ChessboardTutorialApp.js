@@ -23,9 +23,9 @@ export default class ChessboardTutorialApp extends Component {
 
 	componentDidMount() {
 
-        document.title = "RankIt!";
+    document.title = "RankIt!";
 
-    }
+  }
 
 	componentWillUnmount() {
 		this.unobserve()
@@ -59,10 +59,10 @@ export default class ChessboardTutorialApp extends Component {
 					previews.
 				</p>
 				<div style={{
-					width: 514, 
-					height: 514, 
-					border: '1px solid gray', 
-					//display: 'inline', 
+					width: 514,
+					height: 514,
+					border: '1px solid gray',
+					//display: 'inline',
 					//'flex-wrap': 'wrap'
 				}}>
 					<Board knightPosition={knightPosition} />

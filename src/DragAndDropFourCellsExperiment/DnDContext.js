@@ -1,15 +1,54 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragDropContext } from 'react-dnd'
-import { Grid } from 'react-md';
+import { Grid, Card } from 'react-md';
 import HTML5Backend from 'react-dnd-html5-backend'
 import TargetCell from './TargetCell';
+import SourceCard from './SourceCard';
+
+let cardPosition = [1, 1];
+let observer = null
+
+
+
+export function moveCard(toRow, toColumn) {
+	cardPosition = { row: toRow, column: toColumn };
+	console.log('moveCard cardPosition');
+	console.log(cardPosition);
+	if (observer)
+		observer(cardPosition);
+	//emitChange()
+}
+
 
 //import BoardSquare from './BoardSquare'
 //import Knight from './Knight'
 //import './Board.less'
 
 class DnDContext extends Component {
+	constructor(props) {
+		super(props)
+		this.state = { row: 1, column: 1 };
+		//this.setState(cardPosition);
+
+		observer = this.handleChange.bind(this);
+	}
+
+	handleChange(cardPosition) {
+		const nextState = cardPosition
+		if (this.state) {
+			this.setState(nextState)
+		} else {
+			this.state = nextState
+		}
+	}
+
+	// const nextState = { knightPosition }
+	// if (this.state) {
+	// 	this.setState(nextState)
+	// } else {
+	// 	this.state = nextState
+	// }
 	// static propTypes = {
 	// 	knightPosition: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
 	// }
@@ -30,38 +69,46 @@ class DnDContext extends Component {
 	// 	)
 	// }
 
-	// renderPiece(x, y) {
-	// 	const [knightX, knightY] = this.props.knightPosition
-	// 	const isKnightHere = x === knightX && y === knightY
-	// 	return isKnightHere ? <Knight /> : null
-	// }
+	renderRow(row) {
+		let rendered_row_to_return = [];
+
+		for (let render_column = 1;  render_column < 3; render_column += 1) {
+			const key_for_cell = ((row * 2) + render_column);
+			rendered_row_to_return.push(
+				<TargetCell key={ key_for_cell } row={row} column={render_column}>
+					{this.renderCard(row, render_column)}
+				</TargetCell>
+			);
+		}
+
+		return rendered_row_to_return;
+	}
+
+	renderCard(render_row, render_column) {
+		const { row, column } = this.state;
+		console.log('renderCard');
+		console.log(row + ',' + column);
+		const isCardHere = render_row === row && render_column === column
+		return isCardHere ? <SourceCard /> : null
+	}
 
 	render() {
-		// const squares = []
-		// for (let i = 0; i < 64; i += 1) {
-		// 	squares.push(this.renderSquare(i))
-		// }
 
-		return (
-			<div>
-            	<Grid>
-                    <TargetCell>
-                        1
-                    </TargetCell>
-                    <TargetCell>
-                        2
-                    </TargetCell>
-                </Grid>
-                <Grid>
-                    <TargetCell>
-                        3
-                    </TargetCell>
-                    <TargetCell>
-                        4
-                    </TargetCell>
-                </Grid>
-			</div>
-        );
+		//const { card_row, card_column } = this.state;
+
+		let rendered_to_return = [];
+
+		for (let render_row = 1; render_row < 3; render_row += 1) {
+			rendered_to_return.push(
+				<Grid>
+					{this.renderRow(render_row)}
+				</Grid>
+			);
+
+			//squares.push(this.renderSquare(i))
+		}
+
+		return rendered_to_return;
 	}
 }
 
