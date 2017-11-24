@@ -6,30 +6,34 @@ import HTML5Backend from 'react-dnd-html5-backend'
 import TargetCell from './TargetCell';
 import SourceCard from './SourceCard';
 
-let cardPosition = [1, 1];
+//let cardPosition = [1, 1];
 let observer = null
 
-
-
 export function moveCard(toRow, toColumn) {
-	cardPosition = { row: toRow, column: toColumn };
+	const cardPosition = { row: toRow, column: toColumn };
 	console.log('moveCard cardPosition');
 	console.log(cardPosition);
 	if (observer)
 		observer(cardPosition);
-	//emitChange()
 }
-
-
-//import BoardSquare from './BoardSquare'
-//import Knight from './Knight'
-//import './Board.less'
 
 class DnDContext extends Component {
 	constructor(props) {
 		super(props)
-		this.state = { row: 1, column: 1 };
-		//this.setState(cardPosition);
+
+		const storedState = localStorage.getItem('RankIt-DragAndDropFourCellsExperiment');
+
+		if (storedState) {
+			//console.log('there seem to be some stored state');
+			//console.log(storedState);
+		    this.state = JSON.parse(storedState);
+		} else {
+			this.state = { row: 1, column: 1 };
+			localStorage.setItem('RankIt-DragAndDropFourCellsExperiment', JSON.stringify(this.state));
+		}
+
+		//console.log('State in constructor');
+		//console.log(this.state);
 
 		observer = this.handleChange.bind(this);
 	}
@@ -41,33 +45,8 @@ class DnDContext extends Component {
 		} else {
 			this.state = nextState
 		}
+		localStorage.setItem('RankIt-DragAndDropFourCellsExperiment', JSON.stringify(this.state));
 	}
-
-	// const nextState = { knightPosition }
-	// if (this.state) {
-	// 	this.setState(nextState)
-	// } else {
-	// 	this.state = nextState
-	// }
-	// static propTypes = {
-	// 	knightPosition: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
-	// }
-
-	// renderSquare(i) {
-	// 	const x = i % 8
-	// 	const y = Math.floor(i / 8)
-	// 	//console.log('renderSquare ' + x);
-
-	// 	const float_attribute = (x == 7) ? 'right' : 'left'
-
-	// 	return (
-	// 		<div key={i} style={{ width: 64, height: 64, float: float_attribute }}>
-	// 			<BoardSquare x={x} y={y}>
-	// 				{this.renderPiece(x, y)}
-	// 			</BoardSquare>
-	// 		</div>
-	// 	)
-	// }
 
 	renderRow(row) {
 		let rendered_row_to_return = [];
@@ -83,13 +62,18 @@ class DnDContext extends Component {
 
 		return rendered_row_to_return;
 	}
-
+      /* the same as your div height */
 	renderCard(render_row, render_column) {
 		const { row, column } = this.state;
-		console.log('renderCard');
-		console.log(row + ',' + column);
+		//console.log('renderCard');
+		//console.log(row + ',' + column);
 		const isCardHere = render_row === row && render_column === column
-		return isCardHere ? <SourceCard /> : null
+		return isCardHere ? <SourceCard row={ render_row } column={ render_column } /> : 
+			<div style={{ textAlign: 'center', verticalAlign: 'middle', lineHeight: '200px' }}>
+				
+					This is row { render_row }, column { render_column }.
+				
+			</div>
 	}
 
 	render() {

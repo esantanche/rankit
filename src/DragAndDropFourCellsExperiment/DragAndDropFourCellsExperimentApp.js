@@ -15,6 +15,13 @@ export default class DragAndDropFourCellsExperimentApp extends Component {
 
 		return (
             <div>
+				<Grid>
+					<Cell size={12}>
+						<CardActions centered={true}>
+							<Button raised primary iconEl={<FontIcon>home</FontIcon>} href="/">Back home</Button>
+						</CardActions>	
+					</Cell>
+				</Grid>
 		
                 <DnDContext />
                 

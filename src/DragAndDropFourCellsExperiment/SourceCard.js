@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
-import { Card } from 'react-md';
+import { Card, CardTitle, CardText } from 'react-md';
 import ItemTypes from './DragAndDropItemTypes'
 import ReactDOM from 'react-dom'
 
@@ -23,11 +23,13 @@ function collect(connect, monitor) {
 class SourceCard extends Component {
 
 	render() {
-		const { connectDragSource, isDragging } = this.props
+		const { row, column, connectDragSource, isDragging } = this.props
 		return (
 
 			<Card style={{ height: '200px'}} ref={instance => connectDragSource(ReactDOM.findDOMNode(instance))}>
-                This is the card to drag
+                <CardTitle title="Card to drag" />
+                <CardText>You can drag and drop this card to the other cells</CardText>
+                <CardText>This card is now in row { row }, column { column }</CardText>
             </Card>
             
 		)

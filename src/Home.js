@@ -43,55 +43,77 @@ class Home extends Component {
   
             <div className="App">
                 
-                <Grid>
+                <Card>
+                    <CardTitle title="About RankIt!" />
 
-                    <Cell size={4}>
-                        <Card>
-                            <CardTitle title="What this website is about" />
+                    <Grid>
+
+                        <Cell size={3}>
+                            <Card>
+                                <CardTitle title="What this website is about" />
+                                
+                                <CardText>
+                                    It's an application called RankIt. 
+                                    It's an experiment used to learn about the technologies listed on the side.
+                                </CardText>
                             
-                            <CardText>
-                                It's an application called RankIt. 
-                                It's an experiment used to learn about the technologies listed on the side.
-                            </CardText>
-                        
-                        </Card>
-                    </Cell>
+                            </Card>
+                        </Cell>
 
-                    <Cell size={4}>
-                    <Card>
-                        <CardTitle title="Who is the author" />
-                        
-                        <CardText>
-                            The author is Emanuele Santanche.
-                        </CardText>
+                        <Cell size={3}>
+                            <Card>
+                                <CardTitle title="Who is the author" />
+                                
+                                <CardText>
+                                    The author is Emanuele Santanche.
+                                </CardText>
 
-                        <CardActions centered={true}>
-                            <Button flat primary iconEl={<FontIcon>website</FontIcon>} href="http://emanuelesantanche.com" target="_blank">
-                                Click here to visit my website
-                            </Button>
-                        </CardActions>	
-                    
-                    </Card>
-                </Cell>
-
-                    <Cell size={4}>
-                        <Card>
-                            <CardTitle title="Technologies used in this project" />
+                                <CardActions centered={true}>
+                                    <Button flat primary iconEl={<FontIcon>website</FontIcon>} href="http://emanuelesantanche.com" target="_blank">
+                                        Click here to visit my website
+                                    </Button>
+                                </CardActions>	
                             
-                            <List className="md-cell md-paper md-paper--1" style={{ margin: 'auto' }}>
-                                <ListItem primaryText="React" />
-                                <ListItem primaryText="React Material Design" />
-                                <ListItem primaryText="React Motion" />
-                                <ListItem primaryText="React Router" />
-                                <ListItem primaryText="React Drag and Drop" />
-                                <ListItem primaryText="(to come) Drupal 8" />
-                                <ListItem primaryText="(to come) Jest" />                                
-                            </List>
+                            </Card>
+                        </Cell>
 
-                        </Card>
-                    </Cell>
+                        <Cell size={3}>
+                            <Card>
+                                <CardTitle title="Github repository" />
+                                
+                                <CardText>
+                                    This application is open source and published in a github repository. 
+                                </CardText>
 
-                </Grid>
+                                <CardActions centered={true}>
+                                    <Button flat primary iconEl={<FontIcon>website</FontIcon>} href="https://github.com/esantanche/rankit" target="_blank">
+                                        Click here to visit the repository
+                                    </Button>
+                                </CardActions>	
+                            
+                            </Card>
+                        </Cell>
+
+                        <Cell size={3}>
+                            <Card>
+                                <CardTitle title="Technologies used in this project" />
+                                
+                                <List className="md-cell md-paper md-paper--1" style={{ margin: 'auto' }}>
+                                    <ListItem primaryText="React" />
+                                    <ListItem primaryText="React Material Design" />
+                                    <ListItem primaryText="React Motion" />
+                                    <ListItem primaryText="React Router" />
+                                    <ListItem primaryText="React Drag and Drop" />
+                                    <ListItem primaryText="(to come) Drupal 8" />
+                                    <ListItem primaryText="(to come) Jest" />                                
+                                </List>
+
+                            </Card>
+                        </Cell>
+
+                    </Grid>
+
+                </Card>
         
                 <Card>
                     <CardTitle title="Experiments" />

@@ -47,8 +47,8 @@ class TargetCell extends Component {
 	render() {
 		const { key, row, column, connectDropTarget, isOver, canDrop, children } = this.props
 
-		console.log('render TargetCell');
-		console.log(this.props);
+		//console.log('render TargetCell');
+		//console.log(this.props);
 
     // https://github.com/react-dnd/react-dnd/releases/tag/v2.0.0 here there is the trick I used below
 
