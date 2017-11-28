@@ -6,8 +6,11 @@ import BoardSquare from './BoardSquare'
 import Knight from './Knight'
 import './Board.less'
 
-//@DragDropContext(HTML5Backend)
+/**
+ * Class Board representing the chess board.
+ */
 class Board extends Component {
+	
 	static propTypes = {
 		knightPosition: PropTypes.arrayOf(PropTypes.number.isRequired).isRequired,
 	}

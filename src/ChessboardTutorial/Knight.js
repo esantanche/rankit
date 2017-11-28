@@ -17,8 +17,8 @@ function collect(connect, monitor) {
 	}
 }
 
-//@DragSource(ItemTypes.KNIGHT, knightSource, collect)
 class Knight extends Component {
+	
 	static propTypes = {
 		connectDragSource: PropTypes.func.isRequired,
 		connectDragPreview: PropTypes.func.isRequired,

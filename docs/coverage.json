@@ -1,8 +1,20 @@
 {
   "coverage": "0%",
-  "expectCount": 5,
+  "expectCount": 11,
   "actualCount": 0,
   "files": {
+    "src/ChessboardTutorial/Game.js": {
+      "expectCount": 6,
+      "actualCount": 0,
+      "undocumentLines": [
+        1,
+        2,
+        4,
+        8,
+        21,
+        32
+      ]
+    },
     "src/registerServiceWorker.js": {
       "expectCount": 5,
       "actualCount": 0,

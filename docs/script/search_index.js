@@ -1,5 +1,23 @@
 window.esdocSearchIndex = [
   [
+    "rankitapp/src/chessboardtutorial/game.js~canmoveknight",
+    "function/index.html#static-function-canMoveKnight",
+    "<span>canMoveKnight</span> <span class=\"search-result-import-path\">rankitapp/src/ChessboardTutorial/Game.js</span>",
+    "function"
+  ],
+  [
+    "rankitapp/src/chessboardtutorial/game.js~moveknight",
+    "function/index.html#static-function-moveKnight",
+    "<span>moveKnight</span> <span class=\"search-result-import-path\">rankitapp/src/ChessboardTutorial/Game.js</span>",
+    "function"
+  ],
+  [
+    "rankitapp/src/chessboardtutorial/game.js~observe",
+    "function/index.html#static-function-observe",
+    "<span>observe</span> <span class=\"search-result-import-path\">rankitapp/src/ChessboardTutorial/Game.js</span>",
+    "function"
+  ],
+  [
     "rankitapp/src/registerserviceworker.js~register",
     "function/index.html#static-function-register",
     "<span>register</span> <span class=\"search-result-import-path\">rankitapp/src/registerServiceWorker.js</span>",
@@ -292,6 +310,24 @@ window.esdocSearchIndex = [
     "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
     "src/.external-ecmascript.js~undefined",
     "external"
+  ],
+  [
+    "src/chessboardtutorial/game.js",
+    "file/src/ChessboardTutorial/Game.js.html",
+    "src/ChessboardTutorial/Game.js",
+    "file"
+  ],
+  [
+    "src/chessboardtutorial/itemtypes.js",
+    "file/src/ChessboardTutorial/ItemTypes.js.html",
+    "src/ChessboardTutorial/ItemTypes.js",
+    "file"
+  ],
+  [
+    "src/draganddropfourcellsexperiment/draganddropitemtypes.js",
+    "file/src/DragAndDropFourCellsExperiment/DragAndDropItemTypes.js.html",
+    "src/DragAndDropFourCellsExperiment/DragAndDropItemTypes.js",
+    "file"
   ],
   [
     "src/registerserviceworker.js",

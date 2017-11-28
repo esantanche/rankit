@@ -62,7 +62,7 @@ class Home extends Component {
 
                         <Cell size={3}>
                             <Card>
-                                <CardTitle title="Who is the author" />
+                                <CardTitle title="Who is the author?" />
                                 
                                 <CardText>
                                     The author is Emanuele Santanche.

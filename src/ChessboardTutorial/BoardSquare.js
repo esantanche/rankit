@@ -23,8 +23,8 @@ function collect(connect, monitor) {
 	}
 }
 
-//@DropTarget(ItemTypes.KNIGHT, squareTarget, collect)
 class BoardSquare extends Component {
+	
 	static propTypes = {
 		x: PropTypes.number.isRequired,
 		y: PropTypes.number.isRequired,

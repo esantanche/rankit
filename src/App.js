@@ -16,7 +16,7 @@ import DragAndDropFourCellsExperimentApp from './DragAndDropFourCellsExperiment/
 class App extends Component {
   
   /**
-   * Description of method "render".
+   * Defining the routing for the application.
    */
   render() {
     return (    

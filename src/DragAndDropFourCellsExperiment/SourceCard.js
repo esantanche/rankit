@@ -20,8 +20,14 @@ function collect(connect, monitor) {
 	}
 }
 
+/**
+ * Class SourceCard describing the Material Design Card that can be dragged and dropped.
+ */
 class SourceCard extends Component {
 
+	/**
+	 * Rendering the card and using it as drag source. It means that it's something you can drag and drop.
+	 */
 	render() {
 		const { row, column, connectDragSource, isDragging } = this.props
 		return (

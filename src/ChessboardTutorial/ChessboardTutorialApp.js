@@ -23,9 +23,9 @@ export default class ChessboardTutorialApp extends Component {
 
 	componentDidMount() {
 
-    document.title = "RankIt!";
+    	document.title = "RankIt!";
 
-  }
+  	}
 
 	componentWillUnmount() {
 		this.unobserve()

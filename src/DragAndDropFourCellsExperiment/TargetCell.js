@@ -33,7 +33,6 @@ function collect(connect, monitor) {
 	}
 }
 
-//@DropTarget(ItemTypes.KNIGHT, squareTarget, collect)
 class TargetCell extends Component {
 	static propTypes = {
 		row: PropTypes.number.isRequired,
