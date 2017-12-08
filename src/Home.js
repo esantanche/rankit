@@ -114,6 +114,8 @@ class Home extends Component {
                     </Grid>
 
                 </Card>
+
+                <div>&nbsp;</div>
         
                 <Card>
                     <CardTitle title="Experiments" />
@@ -125,7 +127,7 @@ class Home extends Component {
                                 <CardText>Four cells and a card to drag and drop</CardText>
                                 <CardActions centered={true}>
                                     <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/draganddropfourcellsexperimentapp">
-                                        Click here to see the experiment
+                                        See the experiment
                                     </Button>
                                 </CardActions>	
                             </Card>
@@ -156,6 +158,32 @@ class Home extends Component {
                                     <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/animationplayground">Animation playground</Button>
                                 </CardActions>	
                             </Card>
+                        </Cell>
+                    </Grid>
+                    <Grid>
+                        <Cell size={3}>
+                            <Card>
+                                <CardTitle title="T9 tutorial" />
+                                <CardText>
+                                    This is a bit unrelated, but still good as tutorial.
+                                    It's about simulating T9 prediction in mobile phones. 
+                                    You press '46' and you get 'go'.
+                                </CardText>
+                                <CardActions centered={true}>
+                                    <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/t9tutorial">
+                                        See the experiment
+                                    </Button>
+                                </CardActions>	
+                            </Card>
+                        </Cell>
+                        <Cell size={3}>
+                            
+                        </Cell>
+                        <Cell size={3}>
+                            
+                        </Cell>
+                        <Cell size={3}>
+                            
                         </Cell>
                     </Grid>
                 
