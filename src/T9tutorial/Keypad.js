@@ -76,7 +76,17 @@ export default class Keypad extends Component {
                     // Removing last number from string of numbers
                     const updated_string_of_numbers = this.state.typed_string_of_numbers.slice(0, -1);
 
-                    this.setState(this.recalculate_new_state(updated_string_of_numbers));
+                    if (updated_string_of_numbers.length > 0) {
+
+                        this.setState(this.recalculate_new_state(updated_string_of_numbers));
+                        
+                    } else {
+
+                        // The input string has been completely deleted
+
+                        this.setState(resetted_state);
+                        
+                    }
 
                 } else {
 
