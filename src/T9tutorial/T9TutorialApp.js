@@ -131,8 +131,8 @@ export default class T9TutorialApp extends Component {
                             <CardTitle subtitle="Limitations" />
 
                             <CardText>
-                                It's not context-aware or grammar-aware. No smart result ordering. Plurals are not taken into account.
-                            </CardText>		
+                                It is not context-aware or grammar-aware. No smart result ordering. Plurals are not taken into account.
+                            </CardText>
 
                         </Card>
                     </Cell>
