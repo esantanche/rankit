@@ -10,7 +10,7 @@ const resetted_state = { typed_string_of_numbers: "",
 
 export default class Keypad extends Component {
 
-	constructor(props) {
+    constructor(props) {
         super(props)
         
         this.state = resetted_state;
@@ -19,7 +19,7 @@ export default class Keypad extends Component {
         this.handleFunctionKeypadButtonsClick = this.handleFunctionKeypadButtonsClick.bind(this);
         this.recalculate_new_state = this.recalculate_new_state.bind(this);
 
-	}
+    }
 
     recalculate_new_state(updated_string_of_numbers) {
 
@@ -129,14 +129,14 @@ export default class Keypad extends Component {
     // I called the function handleKeypadButtonClick with a parameter indicating the button number because,
     // when I used the event object, it wasn't working. 
 
-	render() {
+    render() {
 
-		return (
+        return (
             <div>
-				<Grid>
+                <Grid>
                     <Cell size={4}>
                     </Cell>
-					<Cell size={4}>
+                    <Cell size={4}>
                         <Grid>
                             <Cell size={12}>
                                 <Card >
@@ -153,10 +153,10 @@ export default class Keypad extends Component {
                             <Cell size={4}>
                                  <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleFunctionKeypadButtonsClick("cycle")} raised primary>
+                                        <Button onClick={() => this.handleFunctionKeypadButtonsClick("cycle")} raised primary>
                                             Cycle
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                             <Cell size={4}>
@@ -171,10 +171,10 @@ export default class Keypad extends Component {
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleFunctionKeypadButtonsClick("delete")} raised primary>
+                                        <Button onClick={() => this.handleFunctionKeypadButtonsClick("delete")} raised primary>
                                             Delete
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                         </Grid>
@@ -182,32 +182,32 @@ export default class Keypad extends Component {
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button disabled={true} raised primary 
+                                        <Button disabled={true} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             1
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
 
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(2)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(2)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             2 ABC
                                         </Button>
-						            </CardActions>	                                   
+                                    </CardActions>	                                   
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(3)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(3)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             3 DEF
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                         </Grid>
@@ -215,31 +215,31 @@ export default class Keypad extends Component {
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(4)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(4)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             4 GHI
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(5)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(5)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             5 JKL
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(6)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(6)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             6 MNO
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                         </Grid>
@@ -247,37 +247,37 @@ export default class Keypad extends Component {
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(7)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(7)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             7 PQRS
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(8)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(8)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                             8 TUV
                                         </Button>
-						            </CardActions>	
+                                    </CardActions>	
                                 </Card>
                             </Cell>
                             <Cell size={4}>
                                 <Card>
                                     <CardActions centered={true}>
-							            <Button onClick={() => this.handleKeypadButtonClick(9)} raised primary 
+                                        <Button onClick={() => this.handleKeypadButtonClick(9)} raised primary 
                                                 iconEl={<FontIcon>dialpad</FontIcon>}>
                                                 9 WXYZ
                                         </Button>
-						            </CardActions>
+                                    </CardActions>
                                 </Card>
                             </Cell>
                         </Grid>
-					</Cell>
-				</Grid>
+                    </Cell>
+                </Grid>
             </div>
-		)
-	}
+        )
+    }
 }
