@@ -1,7 +1,7 @@
-    //var root = this;
-    //var t9 = root.t9 = {};
-
-    //console.log('inside t9processor');
+/**
+ * This file is from https://github.com/arifwn/t9-emulator.
+ * It's the file where there are the fucntions used to perform the T9 prediction.
+ */
 
     var t9dictionary = '';
     var t9dictionaryTree = {};
@@ -17,23 +17,18 @@
         9: 'wxyz'
     };
 
-    function Word(word, occurrences) {
-        this.word = word;
-        this.occurrences = occurrences;
-    }
-
-    Word.prototype.toString = function () {
-        return this.word + ' (' + this.occurrences + ')';
-    };
-
+    /**
+     * The dictionary used to make the predictions is loaded and transformed
+     * into a tree following the Trie algorithm (https://github.com/jrolfs/javascript-trie-predict/blob/master/predict.js)
+     * @param {*} dictionary 
+     */
     export function t9init (dictionary) {
-        console.log('initializing dictionary');
+
         t9dictionary = dictionary;
         t9words = dictionary.split(/\s+/g);
 
         var tree = {};
 
-        // https://github.com/jrolfs/javascript-trie-predict/blob/master/predict.js
         t9words.forEach(function (word) {
             var letters = word.split('');
             var leaf = tree;
@@ -78,19 +73,29 @@
         });
         
         t9dictionaryTree = tree;
-        console.log('t9dictionaryTree result');
-        console.log(t9dictionaryTree);
 
     };
 
-    function t9predict(numericInput) {
+    /**
+     * This is the function that is called from the function recalculate_new_state in Keypad.js to get the predictions
+     * @param {*} numericInput String of typed numbers
+     */
+    export function t9predict(numericInput) {
         var input = new String(numericInput);
         var results = t9findWords(numericInput, t9dictionaryTree, true);
 
         return results;
     };
 
-
+    /**
+     * Function used by t9predict
+     * @param {*} sequence String of typed numbers
+     * @param {*} tree The dictionary in tree format
+     * @param {*} exact 
+     * @param {*} words 
+     * @param {*} currentWord 
+     * @param {*} depth 
+     */
     function t9findWords(sequence, tree, exact, words, currentWord, depth) {
 
         var current = tree;

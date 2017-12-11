@@ -1,64 +1,37 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-md';
-import { Button, Card, CardTitle, CardText, CardActions, FontIcon } from 'react-md';
+import { Button, Card, CardTitle, CardText, CardActions, FontIcon, List, ListItem, Subheader } from 'react-md';
 import Keypad from './Keypad';
-//var t9 = require('./t9processor.js');
-//import 
 import { t9init } from './t9processor'
+
+const InfoIcon = () => <FontIcon>info</FontIcon>;
 
 export default class T9TutorialApp extends Component {
 	constructor(props) {
 		super(props)
-		console.log('now in constructor');
-		//console.log(t9);
-	    //const dictionary = '';
+
+		// Initializing component state
+		// dictionary is the words dictionary the T9 predictor is going to use
         this.state = { dictionary: "" };
 
-
-		var reader = new FileReader();
-		reader.onload = function(event) {
-			var contents = event.target.result;
-			console.log("File contents: " + contents);
-		};
-
-		reader.onerror = function(event) {
-			console.error("File could not be read! Code " + event.target.error.code);
-		};
-
-		//reader.readAsText(new File('./dictionary.txt'));
-
-
-		const dictionary = '';//require("./dictionary.txt");
-
-		//console.log(dictionary);
-		//const mykeymap4 = t9.keyMap[4];
-
-		//onsole.log(mykeymap4);
-		//console.log(t9keyMap);
-		//var fileContents = './dictionary.txt'.toURL().text;
-		//console.log(fileContents);
-
-		//console.log(t9.init);
-		//t9init(dictionary);
 	}
 
 	componentDidMount() {
 
-        var self = this;
+		var self = this;
+		
+		// Fetching the dictionary to pass it to the function t9init for it to create the internal
+		// structures the T9 processor needs to work
 
         fetch("/rankitapp/src/T9tutorial/dictionary.txt")
-        .then((response) => response.text())
-        .then(function(data) {
+        	.then((response) => response.text())
+        	.then(function(data) {
 
-            console.log("inside componentDidMount ");
-			console.log(data);
-
-			t9init(data);
+				t9init(data);
             
         })
     }
     
-
 	render() {
 
 		return (
@@ -73,21 +46,103 @@ export default class T9TutorialApp extends Component {
 		
 				<Keypad />
 
-				<Card>
-					<CardText>
+				<Grid>
+					<Cell size={4}>
+                    </Cell>
 
-					</CardText>
-				
-				</Card>
-                
+                    <Cell size={4}>
+                        <Card>
+
+							<CardTitle subtitle="Links" />
+
+							<CardText>
+                            	This tutorial is in a folder in this github repository of mine: 
+							</CardText>
+
+                            <Button flat primary iconEl={<FontIcon>website</FontIcon>} 
+                                    href="https://github.com/esantanche/rankit/tree/master/src/T9tutorial" target="_blank">
+                                            T9tutorial
+							</Button>
+							
+							<CardText>
+                            	The original non-React tutorial is here:
+							</CardText>
+
+                            <Button flat primary iconEl={<FontIcon>website</FontIcon>} 
+                                    href="https://www.sainsmograf.com/labs/t9-emulator/" target="_blank">
+                                            Original tutorial
+							</Button>
+							
+                        </Card>
+                    </Cell>
+
+					<Cell size={4}>
+                    </Cell>
+
+                </Grid>
+
+				<Grid>
+					<Cell size={4}>
+                    </Cell>
+
+                    <Cell size={4}>
+						<Card>
+							<CardTitle subtitle="Numbers for testing" />
+
+							<CardText>
+								<List>
+									<ListItem
+										rightIcon={<InfoIcon />}
+										primaryText="testing"
+										secondaryText="8378464"
+									/>
+									<ListItem
+										rightIcon={<InfoIcon />}
+										primaryText="super"
+										secondaryText="78737"
+									/>
+									<ListItem
+										rightIcon={<InfoIcon />}
+										primaryText="mario"
+										secondaryText="62746"
+									/>
+									<ListItem
+										rightIcon={<InfoIcon />}
+										primaryText="legend"
+										secondaryText="534363"
+									/>
+								</List>
+							</CardText>						
+						</Card>
+                    </Cell>
+
+					<Cell size={4}>
+                    </Cell>
+					
+                </Grid>
+
+				<Grid>
+					<Cell size={4}>
+                    </Cell>
+
+                    <Cell size={4}>
+						<Card>
+
+						    <CardTitle subtitle="Limitations" />
+
+							<CardText>
+								It's not context-aware or grammar-aware. No smart result ordering. Plurals are not taken into account.
+							</CardText>		
+
+						</Card>
+                    </Cell>
+
+					<Cell size={4}>
+                    </Cell>
+					
+                </Grid>
+
             </div>
 		)
 	}
 }
-
-
-// <Cell size={6} style={styleCells}>
-//                         <Card style={{ height: '200px'}}>
-//                             text here
-//                         </Card>
-//                     </Cell>
