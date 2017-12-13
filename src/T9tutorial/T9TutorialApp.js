@@ -7,25 +7,34 @@ import { t9init } from './t9processor'
 const InfoIcon = () => <FontIcon>info</FontIcon>;
 
 export default class T9TutorialApp extends Component {
-    constructor(props) {
-        super(props)
 
-        // Initializing component state
-        // dictionary is the words dictionary the T9 predictor is going to use
-        this.state = { dictionary: "" };
-
-    }
+    // No constructor here because we don't use the variable this
 
     componentDidMount() {
 
-        var self = this;
+        console.log("T9TutorialApp::componentDidMount")
+        //console.log(req_dict)
+        //console.log(txt)
+
+        //console.log(dict)
         
+        // TODO clean up here
+        //var t9dictionary = req_dict;
+        //var t9words = req_dict.split(/\s+/g);
+
+        //t9words.forEach(function (word) { console.log(word) });
+
         // Fetching the dictionary to pass it to the function t9init for it to create the internal
         // structures the T9 processor needs to work
+
+        // fetch('/public/dictionary.txt')
+
 
         fetch("/rankitapp/src/T9tutorial/dictionary.txt")
             .then((response) => response.text())
             .then(function(data) {
+
+                console.log(data)
 
                 t9init(data);
             

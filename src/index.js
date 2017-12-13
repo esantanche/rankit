@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import WebFontLoader from 'webfontloader';
+// TODO is this OK?
+import './T9tutorial/dictionary.txt'
 
 WebFontLoader.load({
   google: {

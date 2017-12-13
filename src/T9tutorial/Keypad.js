@@ -3,17 +3,17 @@ import { Grid, Cell } from 'react-md';
 import { Button, Card, CardTitle, CardText, CardActions, FontIcon, TextField } from 'react-md';
 import { t9predict } from './t9processor'
 
-const resetted_state = { typed_string_of_numbers: "", 
-                         predicted_words_list: [], 
-                         current_prediction: "",
-                         prediction_index: 0 }
+const initial_state = { typed_string_of_numbers: "", 
+                        predicted_words_list: [], 
+                        current_prediction: "",
+                        prediction_index: 0 }
 
 export default class Keypad extends Component {
 
     constructor(props) {
         super(props)
         
-        this.state = resetted_state;
+        this.state = initial_state;
 
         this.handleKeypadButtonClick = this.handleKeypadButtonClick.bind(this);
         this.handleFunctionKeypadButtonsClick = this.handleFunctionKeypadButtonsClick.bind(this);
@@ -84,7 +84,7 @@ export default class Keypad extends Component {
 
                         // The input string has been completely deleted
 
-                        this.setState(resetted_state);
+                        this.setState(initial_state);
                         
                     }
 
@@ -105,11 +105,10 @@ export default class Keypad extends Component {
                     if (new_prediction_index >= this.state.predicted_words_list.length) 
                         new_prediction_index = 0;
 
-                    var new_state = Object.assign({}, this.state); 
-                    new_state.prediction_index = new_prediction_index;
-                    new_state.current_prediction = this.state.predicted_words_list[new_prediction_index];
+                    // When using this.setState we can just change only the properties we need to change
 
-                    this.setState(new_state);
+                    this.setState({ prediction_index: new_prediction_index,
+                                    current_prediction: this.state.predicted_words_list[new_prediction_index] });
 
                 } else {
 
@@ -121,7 +120,7 @@ export default class Keypad extends Component {
 
                 if (this.state.typed_string_of_numbers.length > 0) {
 
-                    this.setState(resetted_state);
+                    this.setState(initial_state);
 
                 } else {
 
