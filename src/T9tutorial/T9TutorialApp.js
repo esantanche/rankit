@@ -13,24 +13,13 @@ export default class T9TutorialApp extends Component {
     componentDidMount() {
 
         console.log("T9TutorialApp::componentDidMount")
-        //console.log(req_dict)
-        //console.log(txt)
-
-        //console.log(dict)
-        
-        // TODO clean up here
-        //var t9dictionary = req_dict;
-        //var t9words = req_dict.split(/\s+/g);
-
-        //t9words.forEach(function (word) { console.log(word) });
 
         // Fetching the dictionary to pass it to the function t9init for it to create the internal
         // structures the T9 processor needs to work
 
-        // fetch('/public/dictionary.txt')
-
-
-        fetch("/rankitapp/src/T9tutorial/dictionary.txt")
+        // Webpack adds the path of the public folder if you don't specify an absolute path
+        // No need to write /public/dictionary.txt 
+        fetch("dictionary.txt")
             .then((response) => response.text())
             .then(function(data) {
 

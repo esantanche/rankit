@@ -25,6 +25,7 @@
     "watch-css": "npm run build-css && npm run build-css --watch --recursive"
   },
   "devDependencies": {
-    "babel-plugin-transform-decorators": "^6.24.1"
+    "babel-plugin-transform-decorators": "^6.24.1",
+    "raw-loader": "^0.5.1"
   }
 }

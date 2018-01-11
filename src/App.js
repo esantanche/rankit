@@ -8,9 +8,6 @@ import AnimationPlayground from './AnimationPlayground/AnimationPlayground.js'
 import DragAndDropFourCellsExperimentApp from './DragAndDropFourCellsExperiment/DragAndDropFourCellsExperimentApp.js'
 import T9TutorialApp from './T9tutorial/T9TutorialApp'
 
-//const style = { maxWidth: 320 };
-//const nature = '';
-
 /**
  * This is the main component representing the app.
  */
@@ -20,6 +17,7 @@ class App extends Component {
    * Defining the routing for the application.
    */
   render() {
+
     return (    
 
       /* Each route is defined with Route */
