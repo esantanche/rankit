@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { NavigationDrawer, Button, FontIcon, Grid, Cell, 
-         Card, CardTitle, CardText, CardActions, Slider, Media,  MediaOverlay } from 'react-md';
+import { Media, MediaOverlay, Button, FontIcon, Grid, Cell, 
+         Card, CardTitle, CardText, CardActions, Slider } from 'react-md';
 
-const QUOTATION_MARK = "\"";
+const QUOTATION_MARK = "\""
 
 class MaterialDesignComponentsExperiments extends Component {
     constructor() {

@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import { NavigationDrawer, Button, FontIcon, Card, CardTitle, CardText, Slider, Media,  
+import { Button, FontIcon, Card, CardTitle, CardText, Media,  
          MediaOverlay, Grid, Cell, CardActions, List, ListItem } from 'react-md';
 
 const QUOTATION_MARK = 0;
-
 
 class Home extends Component {
     constructor() {
@@ -197,11 +195,3 @@ class Home extends Component {
 }
 
 export default Home;
-
-// <div className="App-header">
-// <img src={logo} className="App-logo" alt="logo" />
-// <h2>Welcome to React</h2>
-// </div>
-// <p className="App-intro">
-// To get started, edit <code>src/App.js</code> and save to reload.
-// </p>

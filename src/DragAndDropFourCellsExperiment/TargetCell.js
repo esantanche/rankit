@@ -44,7 +44,7 @@ class TargetCell extends Component {
 	}
 
 	render() {
-		const { key, row, column, connectDropTarget, isOver, canDrop, children } = this.props
+		const { connectDropTarget, children } = this.props
 
 		//console.log('render TargetCell');
 		//console.log(this.props);

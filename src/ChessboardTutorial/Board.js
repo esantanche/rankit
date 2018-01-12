@@ -18,9 +18,8 @@ class Board extends Component {
 	renderSquare(i) {
 		const x = i % 8
 		const y = Math.floor(i / 8)
-		//console.log('renderSquare ' + x);
 
-		const float_attribute = (x == 7) ? 'right' : 'left'
+		const float_attribute = (x === 7) ? 'right' : 'left'
 
 		return (
 			<div key={i} style={{ width: 64, height: 64, float: float_attribute }}>

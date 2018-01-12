@@ -3,8 +3,6 @@ import { Grid, Cell } from 'react-md';
 import { Button, Card, CardTitle, CardText, CardActions, FontIcon } from 'react-md';
 import { Motion, spring } from 'react-motion';
 
-const QUOTATION_MARK = "\"";
-
 const springConfig = {
   stiffness: 340,
   damping: 88,
@@ -34,9 +32,6 @@ const start_relative_position_style = { x: 0, y: 1000, position: "relative" };
  * Unlike the tutorial, export a component so it can be used on the website.
  */
 export default class AnimationPlayground extends Component {
-	constructor(props) {
-		super(props)
-	}
 
 	render() {
 

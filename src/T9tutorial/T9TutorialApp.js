@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-md';
-import { Button, Card, CardTitle, CardText, CardActions, FontIcon, List, ListItem, Subheader } from 'react-md';
+import { Button, Card, CardTitle, CardText, CardActions, FontIcon, List, ListItem } from 'react-md';
 import Keypad from './Keypad';
 import { t9init } from './t9processor'
 
@@ -18,7 +18,7 @@ export default class T9TutorialApp extends Component {
         // structures the T9 processor needs to work
 
         // Webpack adds the path of the public folder if you don't specify an absolute path
-        // No need to write /public/dictionary.txt 
+        // No need to write /public/dictionary.txt or /reactapp/public/dictionary.txt
         fetch("dictionary.txt")
             .then((response) => response.text())
             .then(function(data) {
