@@ -1,10 +1,8 @@
-# Project Title
-
-RankIt!
-
-## What the applications will do
+# RankIt!
 
 This is a demonstration project. It's about using React and some other technologies to showcase some interesting possibilities.
+
+## What the applications will do
 
 Images of products will be fetched from a server. The user will be able to rank the products by dragging and dropping them.
 
