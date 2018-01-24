@@ -35,19 +35,31 @@ class Home extends Component {
         })
     }
 
-    // TODO center list of techs
+    // There are some FontIcon elements that have style={{ width: "20px" }} added. It's because the icon
+    // is defective and doesn't have proper width.
     render() {
         return (    
   
             <div className="App">
                 
                 <Card>
-                    <CardTitle title="About RankIt!" />
+                    <Grid>
+                        <Cell size={12}>
+                            <Card>                                
+                                <CardText style={{ fontSize: "200%" }}>
+                                    About Rankit!
+                                </CardText>
+                                <CardText>
+                                    What is this website about? What will the application Rankit! do? Who is the author? And other similar questions.
+                                </CardText>
+                            </Card>
+                        </Cell>
+                    </Grid>
 
                     <Grid>
 
-                        <Cell size={3}>
-                            <Card>
+                        <Cell size={3} >
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="What this website is about" />
                                 
                                 <CardText>
@@ -59,7 +71,7 @@ class Home extends Component {
                         </Cell>
 
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Who is the author?" />
                                 
                                 <CardText>
@@ -67,16 +79,18 @@ class Home extends Component {
                                 </CardText>
 
                                 <CardActions centered={true}>
-                                    <Button flat primary iconEl={<FontIcon>website</FontIcon>} href="http://emanuelesantanche.com" target="_blank">
-                                        Click here to visit my website
+
+                                    <Button flat primary iconEl={<FontIcon style={{ width: "20px" }}>website</FontIcon>} href="http://emanuelesantanche.com" target="_blank">
+                                        Visit my website!
                                     </Button>
+
                                 </CardActions>	
-                            
+
                             </Card>
                         </Cell>
 
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Github repository" />
                                 
                                 <CardText>
@@ -84,8 +98,8 @@ class Home extends Component {
                                 </CardText>
 
                                 <CardActions centered={true}>
-                                    <Button flat primary iconEl={<FontIcon>website</FontIcon>} href="https://github.com/esantanche/rankit" target="_blank">
-                                        Click here to visit the repository
+                                    <Button flat primary iconEl={<FontIcon style={{ width: "20px" }}>website</FontIcon>} href="https://github.com/esantanche/rankit" target="_blank">
+                                        Visit the repository
                                     </Button>
                                 </CardActions>	
                             
@@ -93,10 +107,14 @@ class Home extends Component {
                         </Cell>
 
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Technologies used in this project" />
+
+                                <CardText>
+                                    &nbsp;
+                                </CardText>
                                 
-                                <List className="md-cell md-paper md-paper--1" style={{ margin: 'auto' }}>
+                                <List className="md-cell md-paper md-paper--1" style={{ margin: 'auto', width: "200px" }}>
                                     <ListItem primaryText="React" />
                                     <ListItem primaryText="React Material Design" />
                                     <ListItem primaryText="React Motion" />
@@ -105,7 +123,9 @@ class Home extends Component {
                                     <ListItem primaryText="(to come) Drupal 8" />
                                     <ListItem primaryText="(to come) Jest" />                                
                                 </List>
-
+                                <CardText>
+                                    &nbsp;
+                                </CardText>
                             </Card>
                         </Cell>
 
@@ -114,42 +134,76 @@ class Home extends Component {
                 </Card>
 
                 <div>&nbsp;</div>
-        
+
                 <Card>
-                    <CardTitle title="Experiments" />
+                    <Grid>
+                        <Cell size={12}>
+                            <Card>                                
+                                <CardText style={{ fontSize: "200%" }}>
+                                    Rankit!
+                                </CardText>
+                                <CardText>
+                                    Here it's where the actual Rankit! application will be when ready.
+                                </CardText>
+                                <CardText>
+                                    The application will fetch a list of products from a Drupal backend.
+                                    It will then allow the user to rank the products by drag and dropping them.
+                                    This ranking will be stored locally on the user's device and reapplied when
+                                    products are fetched again.
+                                </CardText>
+                            </Card>
+                        </Cell>
+                    </Grid>
+                </Card>
+
+                <div>&nbsp;</div>
+
+                <Card>
+                    <Grid>
+                        <Cell size={12}>
+                            <Card>                                
+                                <CardText style={{ fontSize: "200%" }}>
+                                    Experiments
+                                </CardText>
+                                <CardText>
+                                    Some experiments created to practice and try out the technologies to be used. 
+                                </CardText>
+                            </Card>
+                        </Cell>
+                    </Grid>
 
                     <Grid>
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Drag and drop experiment" />
                                 <CardText>Four cells and a card to drag and drop</CardText>
-                                <CardActions centered={true}>
+                                <CardActions centered={true} style={{ position: "relative", bottom:0}}>
                                     <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/draganddropfourcellsexperimentapp">
-                                        See the experiment
+                                        See experiment
                                     </Button>
                                 </CardActions>	
                             </Card>
                         </Cell>
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Experiments with Material Design components" />
                                 <CardText>Experiments with Material Design components</CardText>
                                 <CardActions centered={true}>
-                                    <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/mdexperiments">Material Design Experiments</Button>
+                                    <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/mdexperiments">See experiments</Button>
                                 </CardActions>	
                             </Card>
                         </Cell>
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Drag and drop tutorial" />
                                 <CardText>Drag and drop tutorial</CardText>
                                 <CardActions centered={true}>
-                                    <Button flat primary iconEl={<FontIcon>games</FontIcon>} href="/chesstutorial">Chess tutorial (drag and drop)</Button>
+                                    <Button flat primary iconEl={<FontIcon>games</FontIcon>} href="/chesstutorial">See tutorial</Button>
                                 </CardActions>	
                             </Card>
                         </Cell>
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="Playing with animations" />
                                 <CardText>Playing with animations</CardText>
                                 <CardActions centered={true}>
@@ -160,7 +214,7 @@ class Home extends Component {
                     </Grid>
                     <Grid>
                         <Cell size={3}>
-                            <Card>
+                            <Card style={{ height: "100%" }}>
                                 <CardTitle title="T9 tutorial" />
                                 <CardText>
                                     This is a bit unrelated, but still good as tutorial.
@@ -169,7 +223,7 @@ class Home extends Component {
                                 </CardText>
                                 <CardActions centered={true}>
                                     <Button flat primary iconEl={<FontIcon>home</FontIcon>} href="/t9tutorial">
-                                        See the experiment
+                                        See experiment
                                     </Button>
                                 </CardActions>	
                             </Card>
