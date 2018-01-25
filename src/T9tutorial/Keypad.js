@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Grid, Cell } from 'react-md';
-import { Button, Card, CardTitle, CardText, CardActions, FontIcon, TextField } from 'react-md';
+import Screen from './Screen'
+import Commands from './Commands'
+import Pad from './Pad'
+
 import { t9predict } from './t9processor'
 
 const initial_state = { typed_string_of_numbers: "", 
@@ -8,6 +11,12 @@ const initial_state = { typed_string_of_numbers: "",
                         current_prediction: "",
                         prediction_index: 0 }
 
+// Documentation style guidelines from https://react-styleguidist.js.org/docs/documenting.html
+
+/**
+ * The idea in React is to break down components into subcomponents,
+ * that's why we have, here, the parent component Keypad containing Screen, Commands and Pad.
+ */
 export default class Keypad extends Component {
 
     constructor(props) {
@@ -21,6 +30,15 @@ export default class Keypad extends Component {
 
     }
 
+    /**
+     * When the user enters a new digit, this method recalculates the state.
+     * It recalulates the list of predictions and selects the first one as the one
+     * to be displayed.
+     * 
+     * The method returns the new state that the caller will set.
+     * 
+     * @param {string} updated_string_of_numbers 
+     */
     recalculate_new_state(updated_string_of_numbers) {
 
         // We get an updated string of numbers here
@@ -51,20 +69,39 @@ export default class Keypad extends Component {
 
     }
 
-    // Handle button click for button of number ButtonNumber
+    /**
+     * Handle button click for button of number ButtonNumber
+     * I defined the function handleKeypadButtonClick with a parameter indicating the button number because,
+     * when I used the event object, it wasn't working. 
+     * 
+     * @param {number} ButtonNumber Number of the button the user clicked
+     */
     handleKeypadButtonClick(ButtonNumber) {
 
-        // A button has been pressed. It's number is ButtonNumber
+        //console.log('Keypad::handleKeypadButtonClick ' + ButtonNumber)
 
         // Just concatenating the button number to the string of numbers
-        const updated_string_of_numbers = this.state.typed_string_of_numbers + ButtonNumber;
+        // It's best practice to explicitly convert a number to string. 
+        // It helps with avoiding bugs
+        const updated_string_of_numbers = this.state.typed_string_of_numbers + String(ButtonNumber);
 
         // The function recalculate_new_state will now recalculate the state and the function
         // this.setState will set it
         this.setState(this.recalculate_new_state(updated_string_of_numbers));
     }
 
+    /**
+     * Here we manage three commands: cycle, delete and clear
+     * 
+     * The button 'delete' deletes last digit entered
+     * The button 'clear' clears all digits
+     * The button 'cycle' cycles through the preditions if there are many of them
+     * 
+     * @param {string} ButtonName Name of the command button the user clicked (cycle, delete or clear)
+     */
     handleFunctionKeypadButtonsClick(ButtonName) {
+
+        //console.log('Keypad::handleFunctionKeypadButtonsClick ' + ButtonName);
 
         switch(ButtonName) {
             case "delete":
@@ -135,9 +172,6 @@ export default class Keypad extends Component {
      
     }
 
-    // I called the function handleKeypadButtonClick with a parameter indicating the button number because,
-    // when I used the event object, it wasn't working. 
-
     render() {
 
         return (
@@ -146,144 +180,9 @@ export default class Keypad extends Component {
                     <Cell size={4}>
                     </Cell>
                     <Cell size={4}>
-                        <Grid>
-                            <Cell size={12}>
-                                <Card >
-                                    <CardText>
-                                            You typed: { this.state.typed_string_of_numbers.length ? this.state.typed_string_of_numbers : "Nothing!" }
-                                    </CardText>
-                                    <CardText>
-                                            Predicted word: { this.state.current_prediction.length ? this.state.current_prediction : "None" }
-                                    </CardText>
-                                </Card>
-                            </Cell>
-                        </Grid>
-                        <Grid>
-                            <Cell size={4}>
-                                 <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleFunctionKeypadButtonsClick("cycle")} raised primary>
-                                            Cycle
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleFunctionKeypadButtonsClick("clear")} raised primary>
-                                            Clear
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleFunctionKeypadButtonsClick("delete")} raised primary>
-                                            Delete
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                        </Grid>
-                        <Grid>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button disabled={true} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            1
-                                        </Button>
-                                    </CardActions>	
-
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(2)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            2 ABC
-                                        </Button>
-                                    </CardActions>	                                   
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(3)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            3 DEF
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                        </Grid>
-                        <Grid>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(4)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            4 GHI
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(5)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            5 JKL
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(6)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            6 MNO
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                        </Grid>
-                        <Grid>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(7)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            7 PQRS
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(8)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                            8 TUV
-                                        </Button>
-                                    </CardActions>	
-                                </Card>
-                            </Cell>
-                            <Cell size={4}>
-                                <Card>
-                                    <CardActions centered={true}>
-                                        <Button onClick={() => this.handleKeypadButtonClick(9)} raised primary 
-                                                iconEl={<FontIcon>dialpad</FontIcon>}>
-                                                9 WXYZ
-                                        </Button>
-                                    </CardActions>
-                                </Card>
-                            </Cell>
-                        </Grid>
+                        <Screen typed_string_of_numbers={this.state.typed_string_of_numbers} current_prediction={this.state.current_prediction}/>
+                        <Commands handleFunctionKeypadButtonsClick={this.handleFunctionKeypadButtonsClick}/>
+                        <Pad handleKeypadButtonClick={this.handleKeypadButtonClick}/>
                     </Cell>
                 </Grid>
             </div>

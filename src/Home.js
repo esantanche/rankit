@@ -4,6 +4,7 @@ import { Button, FontIcon, Card, CardTitle, CardText, Media,
 
 const QUOTATION_MARK = 0;
 
+// TODO  https://react-styleguidist.js.org/docs/documenting.html
 class Home extends Component {
     constructor() {
         super();
@@ -23,14 +24,13 @@ class Home extends Component {
 
         var self = this;
 
-        //alert("did mount");   
         fetch("https://randomuser.me/api")
-        .then((resp) => resp.json())
-        .then(function(data) {
+            .then((resp) => resp.json())
+            .then(function(data) {
 
-            //console.log(data.results[0].picture.large);
+                //console.log(data.results[0].picture.large);
 
-            self.setState({ largepictureurl: data.results[0].picture.large });
+                self.setState({ largepictureurl: data.results[0].picture.large });
 
         })
     }

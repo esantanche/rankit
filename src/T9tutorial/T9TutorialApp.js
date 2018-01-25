@@ -23,13 +23,15 @@ export default class T9TutorialApp extends Component {
             .then((response) => response.text())
             .then(function(data) {
 
-                console.log(data)
+                //console.log(data)
 
                 t9init(data);
             
         })
     }
     
+    // When using the component CardTitle, I always specify the prop 'title', even as empty, to avoid warnings.
+    // The 'title' prop is required and would generate a warning if not specified.
     render() {
 
         return (
@@ -51,7 +53,7 @@ export default class T9TutorialApp extends Component {
                     <Cell size={4}>
                         <Card>
 
-                            <CardTitle subtitle="Links" />
+                            <CardTitle title="" subtitle="Links" />
 
                             <CardText>
                                 This tutorial is in a folder in this github repository of mine: 
@@ -85,7 +87,7 @@ export default class T9TutorialApp extends Component {
 
                     <Cell size={4}>
                         <Card>
-                            <CardTitle subtitle="Numbers for testing" />
+                            <CardTitle title="" subtitle="Numbers for testing" />
 
                             <CardText>
                                 <List>
@@ -126,7 +128,7 @@ export default class T9TutorialApp extends Component {
                     <Cell size={4}>
                         <Card>
 
-                            <CardTitle subtitle="Limitations" />
+                            <CardTitle title="" subtitle="Limitations" />
 
                             <CardText>
                                 It is not context-aware or grammar-aware. No smart result ordering. Plurals are not taken into account.
