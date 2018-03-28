@@ -33,6 +33,27 @@ class Home extends Component {
                 self.setState({ largepictureurl: data.results[0].picture.large });
 
         })
+
+        // TODO this is a test, it has to be deleted
+        fetch("/rest/view/articles")
+            .then((response) => response.json())
+            .then(function(data) {
+
+                console.log('fetch("/rest/view/articles")')
+                console.log(data)
+
+                for (var i = 0; i < data.length; i++) {
+                    var obj = data[i];
+                
+                    console.log(obj.nid);
+                    console.log(obj.title);
+                    console.log(obj.body);
+
+                }
+
+                //t9init(data);
+            
+        })
     }
 
     // There are some FontIcon elements that have style={{ width: "20px" }} added. It's because the icon
@@ -44,7 +65,8 @@ class Home extends Component {
                 
                 <Card>
                     <Grid>
-                        <Cell size={12}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+                        <Cell size={8}>
                             <Card>                                
                                 <CardText style={{ fontSize: "200%" }}>
                                     About Rankit!
@@ -54,11 +76,13 @@ class Home extends Component {
                                 </CardText>
                             </Card>
                         </Cell>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
                     </Grid>
 
                     <Grid>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
 
-                        <Cell size={3} >
+                        <Cell size={4} >
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="What this website is about" />
                                 
@@ -70,7 +94,7 @@ class Home extends Component {
                             </Card>
                         </Cell>
 
-                        <Cell size={3}>
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Who is the author?" />
                                 
@@ -89,7 +113,14 @@ class Home extends Component {
                             </Card>
                         </Cell>
 
-                        <Cell size={3}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                    </Grid>
+                    
+                    <Grid>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Github repository" />
                                 
@@ -106,7 +137,7 @@ class Home extends Component {
                             </Card>
                         </Cell>
 
-                        <Cell size={3}>
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Technologies used in this project" />
 
@@ -114,7 +145,7 @@ class Home extends Component {
                                     &nbsp;
                                 </CardText>
                                 
-                                <List className="md-cell md-paper md-paper--1" style={{ margin: 'auto', width: "200px" }}>
+                                <List>
                                     <ListItem primaryText="React" />
                                     <ListItem primaryText="React Material Design" />
                                     <ListItem primaryText="React Motion" />
@@ -128,16 +159,17 @@ class Home extends Component {
                                 </CardText>
                             </Card>
                         </Cell>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
 
                     </Grid>
 
                 </Card>
 
-                <div>&nbsp;</div>
-
                 <Card>
                     <Grid>
-                        <Cell size={12}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                        <Cell size={8}>
                             <Card>                                
                                 <CardText style={{ fontSize: "200%" }}>
                                     Rankit!
@@ -153,14 +185,16 @@ class Home extends Component {
                                 </CardText>
                             </Card>
                         </Cell>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
                     </Grid>
                 </Card>
 
-                <div>&nbsp;</div>
-
                 <Card>
                     <Grid>
-                        <Cell size={12}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                        <Cell size={8} phoneSize={4}>
                             <Card>                                
                                 <CardText style={{ fontSize: "200%" }}>
                                     Experiments
@@ -170,10 +204,15 @@ class Home extends Component {
                                 </CardText>
                             </Card>
                         </Cell>
+
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
                     </Grid>
 
                     <Grid>
-                        <Cell size={3}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Drag and drop experiment" />
                                 <CardText>Four cells and a card to drag and drop</CardText>
@@ -184,7 +223,7 @@ class Home extends Component {
                                 </CardActions>	
                             </Card>
                         </Cell>
-                        <Cell size={3}>
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Experiments with Material Design components" />
                                 <CardText>Experiments with Material Design components</CardText>
@@ -193,7 +232,16 @@ class Home extends Component {
                                 </CardActions>	
                             </Card>
                         </Cell>
-                        <Cell size={3}>
+
+                        <Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+
+                    </Grid>
+                    <Grid>
+                        <Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Drag and drop tutorial" />
                                 <CardText>Drag and drop tutorial</CardText>
@@ -202,7 +250,7 @@ class Home extends Component {
                                 </CardActions>	
                             </Card>
                         </Cell>
-                        <Cell size={3}>
+                        <Cell size={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="Playing with animations" />
                                 <CardText>Playing with animations</CardText>
@@ -211,9 +259,14 @@ class Home extends Component {
                                 </CardActions>	
                             </Card>
                         </Cell>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+                        
+
                     </Grid>
                     <Grid>
-                        <Cell size={3}>
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
+                        <Cell size={8} phoneSize={4}>
                             <Card style={{ height: "100%" }}>
                                 <CardTitle title="T9 tutorial" />
                                 <CardText>
@@ -228,15 +281,9 @@ class Home extends Component {
                                 </CardActions>	
                             </Card>
                         </Cell>
-                        <Cell size={3}>
-                            
-                        </Cell>
-                        <Cell size={3}>
-                            
-                        </Cell>
-                        <Cell size={3}>
-                            
-                        </Cell>
+                       
+						<Cell size={2} tabletHidden={true} phoneHidden={true}></Cell>
+
                     </Grid>
                 
                 </Card>
@@ -249,3 +296,6 @@ class Home extends Component {
 }
 
 export default Home;
+
+// , width: "200px" style={{ margin: 'auto', fontSize: '60%' }}
+// className="md-cell md-paper md-paper--1"

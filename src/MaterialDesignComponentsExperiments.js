@@ -45,8 +45,11 @@ class MaterialDesignComponentsExperiments extends Component {
 
                 <Grid>
 
-                    <Cell size={6}>
-                        <Card className="cards__example md-cell md-cell--6 md-cell--8-tablet">
+                    <Cell size={3}>
+                    </Cell>
+
+                    <Cell size={3}>
+                        <Card>
                             <Media>
                                 <img src={this.state.largepictureurl} alt="Randon user" />
                                 <MediaOverlay>
@@ -63,8 +66,8 @@ class MaterialDesignComponentsExperiments extends Component {
                         </Card>
                     </Cell>
 
-                    <Cell size={6}>
-                        <Card className="cards__example md-cell md-cell--6 md-cell--8-tablet">
+                    <Cell size={3}>
+                        <Card>
                             <Media>
                                 <iframe allowFullScreen src="https://www.youtube.com/embed/kyAn3fSs8_A" />
                             </Media>
@@ -87,8 +90,37 @@ class MaterialDesignComponentsExperiments extends Component {
                         </Card>
                     </Cell>
 
+                    <Cell size={3}>
+                    </Cell>
+
                 </Grid>
                 
+                <Grid>
+
+                    <Cell size={3}>
+                    </Cell>
+
+                    <Cell size={3}>
+                        <Card>
+                            <Media aspectRatio="4-3">
+                                <img src="/backend/sites/default/files/2018-01/Product-nid-12_0.png" alt="test image" />
+                            </Media>
+                        </Card>
+                    </Cell>
+
+                    <Cell size={3}>
+                        <Card>
+                            <Media aspectRatio="4-3">
+                                <img src="/backend/sites/default/files/2018-01/Product-nid-6.png" alt="test image" />
+                            </Media>
+                        </Card>
+                    </Cell>
+
+                    <Cell size={3}>
+                    </Cell>
+
+                </Grid>
+            
             </div>
           
         );
@@ -97,3 +129,6 @@ class MaterialDesignComponentsExperiments extends Component {
 }
 
 export default MaterialDesignComponentsExperiments;
+
+//  className="cards__example md-cell md-cell--6 md-cell--8-tablet"
+//  className="cards__example md-cell md-cell--6 md-cell--8-tablet"

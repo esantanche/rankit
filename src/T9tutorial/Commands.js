@@ -14,7 +14,7 @@ export default class Commands extends Component {
         return (
             <div>
                 <Grid>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={1}>
                         <Card>
                             <CardActions centered={true}>
                                 <Button onClick={() => this.props.handleFunctionKeypadButtonsClick("cycle")} raised primary>
@@ -23,7 +23,7 @@ export default class Commands extends Component {
                             </CardActions>	
                         </Card>
                     </Cell>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={1}>
                         <Card>
                             <CardActions centered={true}>
                                 <Button onClick={() => this.props.handleFunctionKeypadButtonsClick("clear")} raised primary>
@@ -32,7 +32,7 @@ export default class Commands extends Component {
                             </CardActions>	
                         </Card>
                     </Cell>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={1}>
                         <Card>
                             <CardActions centered={true}>
                                 <Button onClick={() => this.props.handleFunctionKeypadButtonsClick("delete")} raised primary>

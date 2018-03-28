@@ -47,7 +47,7 @@ export default class T9TutorialApp extends Component {
                 <Keypad />
 
                 <Grid>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
 
                     <Cell size={4}>
@@ -76,13 +76,13 @@ export default class T9TutorialApp extends Component {
                         </Card>
                     </Cell>
 
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
 
                 </Grid>
 
                 <Grid>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
 
                     <Cell size={4}>
@@ -116,15 +116,15 @@ export default class T9TutorialApp extends Component {
                         </Card>
                     </Cell>
 
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
                     
                 </Grid>
 
                 <Grid>
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
-
+                    
                     <Cell size={4}>
                         <Card>
 
@@ -137,7 +137,7 @@ export default class T9TutorialApp extends Component {
                         </Card>
                     </Cell>
 
-                    <Cell size={4}>
+                    <Cell size={4} tabletSize={2} phoneSize={0}>
                     </Cell>
                     
                 </Grid>
