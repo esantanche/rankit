@@ -19,10 +19,6 @@ way they ranked it when they visit the website again later.
 * Drupal 8 (not used yet)
 * Jest (not used yet)
 
-## Demo
-
-You can see the application at work here: http://rankit.emanuelesantanche.com/
-
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
